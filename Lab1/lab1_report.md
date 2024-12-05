@@ -23,8 +23,8 @@ Minikube был установлен с официального сайта на
 
 ### 3. Развернуть Minikube кластер  
 После установки кластер был развернут командой:  
-`minikube start`  
-![Рисунок 1](#)  
+`minikube sta![Minikube cluster](https://github.com/user-attachments/assets/75ffe9c6-68a0-4f33-971f-4a0690619ac4)
+rt`  
 *Рисунок 1 – развертка Minikube кластера*
 
 ---
