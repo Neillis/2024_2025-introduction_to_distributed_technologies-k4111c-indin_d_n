@@ -23,14 +23,14 @@ Minikube был установлен с официального сайта на
 
 ### 3. Развернуть Minikube кластер  
 После установки кластер был развернут командой - minikube start 
-![Рисунок 2](./Images/Minikube_cluster.png) 
+![Рисунок 1](./Images/Minikube_cluster.png) 
 
 ---
 
 ### 4. Загрузка образа HashiCorp Vault  
 Образ был загружен командой:  
 `docker pull vault:3.13.3`  
-![Рисунок 2](./Images/Minikube_cluster.png)  
+![Рисунок 2](./Images/HashiCorp_Vault.png)  
 
 ---
 
