@@ -30,8 +30,7 @@ Minikube был установлен с официального сайта на
 ### 4. Загрузка образа HashiCorp Vault  
 Образ был загружен командой:  
 `docker pull vault:3.13.3`  
-![Рисунок 2](#)  
-*Рисунок 2 – установка HashiCorp Vault*
+![Рисунок 2](./Images/Minikube_cluster.png)  
 
 ---
 
