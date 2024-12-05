@@ -23,8 +23,7 @@ Minikube был установлен с официального сайта на
 
 ### 3. Развернуть Minikube кластер  
 После установки кластер был развернут командой:  
-`minikube sta![Minikube cluster](Lab1/Images/Connecting Pod.png)
-rt`  
+(Lab1/Images/Connecting Pod.png)
 *Рисунок 1 – развертка Minikube кластера*
 
 ---
