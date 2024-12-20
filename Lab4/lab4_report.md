@@ -73,6 +73,7 @@ kubectl exec -i -n kube-system calicoctl -- /usr/bin/calicoctl --allow-version-m
 
 ### 3 deployment
 Манифест для deployment
+
 ![Рисунок 5](./Images/Deployment.png) 
 
 Принимаем манифест
@@ -82,7 +83,9 @@ kubectl apply -f deployment.yaml
 
 ### 4 Service
 Манифесть для service
+
 ![Рисунок 6](./Images/Service.png)
+
 Принимаем манифест
 ```bash
 kubectl apply -f service.yaml
