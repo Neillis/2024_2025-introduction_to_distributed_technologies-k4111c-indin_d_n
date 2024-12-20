@@ -25,7 +25,8 @@ Date of finished: 20.12.2024
 Для создания кластера с данной конфигурацией была использована следующая команда
 ```bash
 minikube start --cni=calico --nodes 2 -p multinode-demo
-``` 
+```
+![Рисунок 1](./Images/Claster_creating.png) 
 Проверка созданных нод и работы плагина calico
 ```bash
 kubectl get nodes
@@ -34,7 +35,7 @@ kubectl get nodes
 kubectl get pods -l k8s-app=calico-node -A
 ```
 
-![Рисунок 1](./Images/Check_nodes.png) 
+![Рисунок 2](./Images/Check_nodes.png) 
 
 Присваивание лейблов к нодам
 ```bash
