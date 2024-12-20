@@ -26,7 +26,8 @@ Date of finished: 20.12.2024
 ```bash
 minikube start --cni=calico --nodes 2 -p multinode-demo
 ```
-![Рисунок 1](./Images/Claster_creating.png) 
+![Рисунок 1](./Images/Claster_creating.png)
+
 Проверка созданных нод и работы плагина calico
 ```bash
 kubectl get nodes
