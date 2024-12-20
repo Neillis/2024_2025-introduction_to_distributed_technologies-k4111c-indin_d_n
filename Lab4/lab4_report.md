@@ -57,12 +57,16 @@ kubectl exec -i -n kube-system calicoctl -- /usr/bin/calicoctl --allow-version-m
 ```bash
 kubectl delete ippools default-ipv4-ippool
 ```
-![Рисунок 3](./Images/Ippool.png) 
+![Рисунок 4](./Images/Ippool.png) 
 
 Дальше манифесть принимается командой
 ```bash
 kubectl apply -f calicoctl.yaml
 ```
-
+Проверяем, что действительно создалось 2 IPpool-а
+```bash
+kubectl exec -i -n kube-system calicoctl -- /usr/bin/calicoctl --allow-version-mismatch get ippools -o wide
+```
+![Рисунок 5](./Images/Ippools_status.png) 
 
 
