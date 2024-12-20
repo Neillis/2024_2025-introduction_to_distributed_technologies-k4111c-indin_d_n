@@ -54,26 +54,32 @@ kubectl label nodes multinode-demo-m02 zone=west
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.1/manifests/calico.yaml
 ```
-Или предварительно скачать YAML-файл из [репозитория](https://github.com/projectcalico/calico/tree/v3.27.5/manifests)
+Или предварительно скачать YAML-файл из [репозитория](https://github.com/projectcalico/calico/tree/v3.27.5/manifests) и применить его:
 ```bash
 kubectl apply -f calicoctl.yaml
 ```
 
-Изначально в кластере уже существет Ippool по-умолчанию, это можно проверить командой
+Проверка существующего IPPool
+
+Изначально в кластере уже создан IPPool по умолчанию. Проверить его можно с помощью команды:
 ```bash
 kubectl exec -i -n kube-system calicoctl -- /usr/bin/calicoctl --allow-version-mismatch get ippools -o wide
 ```
-Для созднаия новых Ippool необходимо удалить Ippool по-умолчанию и создать манифест для IPpool
+Удаление IPPool по умолчанию и создание нового
+
+Для создания новых IPPool необходимо сначала удалить существующий, после чего написать и применить манифест IPpool:
 ```bash
 kubectl delete ippools default-ipv4-ippool
 ```
 ![Рисунок 3](./Images/Ippool.png) 
 
-Дальше манифесть принимается командой
+Манифест для IPpool принимается командой:
 ```bash
 kubectl apply -f calicoctl.yaml
 ```
-Проверяем, что действительно создалось 2 IPpool-а
+Проверка новых IPPool
+
+После создания IPPool необходимо убедиться, что появилось два новых пула. Для этого используется команда:
 ```bash
 kubectl exec -i -n kube-system calicoctl -- /usr/bin/calicoctl --allow-version-mismatch get ippools -o wide
 ```
@@ -110,19 +116,23 @@ kubectl apply -f service.yaml
 ```bash
 kubectl port-forward service/service 8200:3000
 ```
-После чего, перейдя по ссылке http://localhost:8200/ можно увидеть страницу с выбранными REACT_APP_USERNAME и REACT_APP_COMPANY_NAME, а также отобразится выбранный IP
+Перейдя по адресу http://localhost:8200/, можно увидеть веб-страницу, где будут отображены значения переменных REACT_APP_USERNAME и REACT_APP_COMPANY_NAME, а также назначенный IP-адрес.
 ![Рисунок 7](./Images/Result.png)
-Ниже прекреплены скриншоты пингования подов
-Для определение названий подов была использована команда
+Для проверки доступности подов и их IP-адресов пропингуем их
+Но для начала необходимо определить название подов:
 ```bash
 kubectl get pods -o wide
 ```
 ![Рисунок 8](./Images/Pods_stats.png)
+
+Пинг первого пода:
 ```bash
 kubectl exec -ti frontdep-5464d78dfc-gfbrv -- sh
 ping 192.168.1.192
 ```
 ![Рисунок 9](./Images/Ping_first.png)
+
+Пинг второго пода:
 ```bash
 kubectl exec -ti frontdep-5464d78dfc-nh65f -- sh
 ping 192.168.0.66
