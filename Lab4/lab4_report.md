@@ -119,7 +119,8 @@ ping 192.168.1.192
 ```
 ![Рисунок 8](./Images/Ping_first.png)
 ```bash
-kubectl exec -ti frontdep-5464d78dfc-gfbrv -- sh
-ping 192.168.0.65
+kubectl exec -ti frontdep-5464d78dfc-nh65f -- sh
+ping 192.168.0.66
 ```
 ![Рисунок 9](./Images/Ping_second.png)
+схема организации контейнеров представлена ниже
