@@ -115,11 +115,11 @@ kubectl port-forward service/service 8200:3000
 Ниже прекреплены скриншоты пингования подов
 ```bash
 kubectl exec -ti frontdep-5464d78dfc-gfbrv -- sh
-ping 192.168.0.192
+ping 192.168.1.192
 ```
 ![Рисунок 8](./Images/Ping_first.png)
 ```bash
 kubectl exec -ti frontdep-5464d78dfc-gfbrv -- sh
-ping 192.168.1.65
+ping 192.168.0.65
 ```
 ![Рисунок 9](./Images/Ping_second.png)
