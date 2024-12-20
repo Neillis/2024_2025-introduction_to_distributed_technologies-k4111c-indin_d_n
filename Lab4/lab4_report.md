@@ -54,12 +54,12 @@ kubectl label nodes multinode-demo-m02 zone=west
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.1/manifests/calico.yaml
 ```
-или же скачать yaml файл с репозитория и принять его командой
+Или же скачать yaml файл с репозитория и принять его командой
 ```bash
 kubectl apply -f calicoctl.yaml
 ```
 
-Проверяем созданные Ippool по умолчанию
+Изначально в кластере уже существет Ippool по-умолчанию, это можно проверить командой
 ```bash
 kubectl exec -i -n kube-system calicoctl -- /usr/bin/calicoctl --allow-version-mismatch get ippools -o wide
 ```
@@ -91,6 +91,8 @@ kubectl exec -i -n kube-system calicoctl -- /usr/bin/calicoctl --allow-version-m
 kubectl apply -f deployment.yaml
 ```
 
+---
+
 ### 4 Service
 Манифесть для service
 
@@ -99,4 +101,12 @@ kubectl apply -f deployment.yaml
 Принимаем манифест
 ```bash
 kubectl apply -f service.yaml
+```
+
+---
+
+### 5 Проверка результата
+После подключения всех компонентов, надо подбросить порт командой
+```bash
+kubectl port-forward service/service 8200:3000
 ```
