@@ -48,13 +48,16 @@ kubectl label nodes multinode-demo-m02 zone=west
 
 ---
 
-### 2 Назначение IP адресов подам
+### 2 Назначение IP адресов нодам
 Проверяем созданные Ippool по умолчанию
 ```bash
 kubectl exec -i -n kube-system calicoctl -- /usr/bin/calicoctl --allow-version-mismatch get ippools -o wide
 ```
-Для созднаия новых Ippool необходимо удалить Ippool по-умолчанию
+Для созднаия новых Ippool необходимо удалить Ippool по-умолчанию и создать манифест для IPpool
 ```bash
 kubectl delete ippools default-ipv4-ippool
 ```
+![Рисунок 3](./Images/Ippool.png) 
+
+
 
