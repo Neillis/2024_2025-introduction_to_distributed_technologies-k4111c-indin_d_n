@@ -57,7 +57,7 @@ kubectl exec -i -n kube-system calicoctl -- /usr/bin/calicoctl --allow-version-m
 ```bash
 kubectl delete ippools default-ipv4-ippool
 ```
-![Рисунок 4](./Images/Ippool.png) 
+![Рисунок 3](./Images/Ippool.png) 
 
 Дальше манифесть принимается командой
 ```bash
@@ -67,6 +67,23 @@ kubectl apply -f calicoctl.yaml
 ```bash
 kubectl exec -i -n kube-system calicoctl -- /usr/bin/calicoctl --allow-version-mismatch get ippools -o wide
 ```
-![Рисунок 5](./Images/Ippools_status.png) 
+![Рисунок 4](./Images/Ippools_status.png) 
 
+---
 
+### 3 deployment
+Манифест для deployment
+![Рисунок 5](./Images/Deployment.png) 
+
+Принимаем манифест
+```bash
+kubectl apply -f deployment.yaml
+```
+
+### 4 Service
+Манифесть для service
+![Рисунок 6](./Images/Service.png)
+Принимаем манифест
+```bash
+kubectl apply -f service.yaml
+```
