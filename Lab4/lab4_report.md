@@ -54,7 +54,7 @@ kubectl label nodes multinode-demo-m02 zone=west
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.1/manifests/calico.yaml
 ```
-Или предварительно скачать YAML-файл из [репозитория][https://github.com/projectcalico/calico/tree/v3.27.5/manifests]
+Или предварительно скачать YAML-файл из [репозитория](https://github.com/projectcalico/calico/tree/v3.27.5/manifests)
 ```bash
 kubectl apply -f calicoctl.yaml
 ```
