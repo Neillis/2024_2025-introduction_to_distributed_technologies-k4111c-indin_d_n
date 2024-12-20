@@ -43,4 +43,16 @@ kubectl label nodes multinode-demo zone=east
 ```bash
 kubectl label nodes multinode-demo-m02 zone=west
 ```
+
 ---
+
+### 2 Назначение IP адресов подам
+Проверяем созданные Ippool по умолчанию
+```bash
+kubectl exec -i -n kube-system calicoctl -- /usr/bin/calicoctl --allow-version-mismatch get ippools -o wide
+```
+Для созднаия новых Ippool необходимо удалить Ippool по-умолчанию
+```bash
+kubectl delete ippools default-ipv4-ippool
+```
+
