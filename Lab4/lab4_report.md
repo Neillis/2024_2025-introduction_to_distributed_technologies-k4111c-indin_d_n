@@ -26,5 +26,21 @@ Date of finished: 20.12.2024
 ```bash
 minikube start --cni=calico --nodes 2 -p multinode-demo
 ``` 
+проверка созданных нод и работы плагина calico
+```bash
+kubectl get nodes
+```
+```bash
+kubectl get pods -l k8s-app=calico-node -A
+```
 
+![Рисунок 1](./Images/Check_nodes.png) 
+
+присваивание лейблов к нодам
+```bash
+kubectl label nodes multinode-demo zone=east
+```
+```bash
+kubectl label nodes multinode-demo-m02 zone=west
+```
 ---
