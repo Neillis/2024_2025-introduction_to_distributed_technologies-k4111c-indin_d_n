@@ -21,5 +21,7 @@ Date of finished: 20.12.2024
 ---
 
 ## Ход работы:
-Установка плагина calico и включение 2-х нод осуществелна командой
-`minikube start --cni=calico --nodes 2 -p multinode-demo`  
+Установка плагина calico и включение 2-х нод осуществелна командой\
+```bash
+minikube start --cni=calico --nodes 2 -p multinode-demo
+``` 
