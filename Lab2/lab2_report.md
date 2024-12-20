@@ -5,8 +5,8 @@ Year: 2024/2025\
 Group: K4111с\
 Author: Indin Danila Nikolaevich\
 Lab: Lab2\
-Date of create: 02.11.2023\
-Date of finished: 03.11.2023
+Date of create: 02.12.2024\
+Date of finished: 03.12.2024
 
 # Лабораторная работа №2  
 **Развертывание веб-сервиса в Minikube, доступ к веб-интерфейсу сервиса, мониторинг сервиса.**
