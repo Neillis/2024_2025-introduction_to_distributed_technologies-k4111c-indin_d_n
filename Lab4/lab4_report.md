@@ -106,7 +106,20 @@ kubectl apply -f service.yaml
 ---
 
 ### 5 Проверка результата
-После подключения всех компонентов, надо подбросить порт командой
+После подключения всех компонентов, подбрасываем порт командой
 ```bash
 kubectl port-forward service/service 8200:3000
 ```
+после чего, перейдя по ссылке http://localhost:8200/ можно увидеть страницу с выбранными REACT_APP_USERNAME и REACT_APP_COMPANY_NAME, а также отобразится выбранный IP
+![Рисунок 7](./Images/Result.png)
+Ниже прекреплены скриншоты пингования подов
+```bash
+kubectl exec -ti frontdep-5464d78dfc-gfbrv -- sh
+ping 192.168.0.192
+```
+![Рисунок 8](./Images/Ping_first.png)
+```bash
+kubectl exec -ti frontdep-5464d78dfc-gfbrv -- sh
+ping 192.168.1.65
+```
+![Рисунок 9](./Images/Ping_second.png)
