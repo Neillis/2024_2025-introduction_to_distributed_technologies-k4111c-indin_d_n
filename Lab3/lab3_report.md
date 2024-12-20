@@ -5,8 +5,8 @@ Year: 2024/2025\
 Group: K4111с\
 Author: Indin Danila Nikolaevich\
 Lab: Lab3\
-Date of create: 03.11.2023\
-Date of finished: 04.11.2023
+Date of create: 03.12.2024\
+Date of finished: 04.12.2024
 
 # Лабораторная работа №3  
 **Сертификаты и "секреты" в Minikube, безопасное хранение данных.**
