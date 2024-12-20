@@ -49,6 +49,16 @@ kubectl label nodes multinode-demo-m02 zone=west
 ---
 
 ### 2 Назначение IP адресов нодам
+Для корректной работы плагино необходимо установить calicoctl в minikube
+это можно сделать командой
+```bash
+kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.1/manifests/calico.yaml
+```
+или же скачать yaml файл с репозитория и принять его командой
+```bash
+kubectl apply -f calicoctl.yaml
+```
+
 Проверяем созданные Ippool по умолчанию
 ```bash
 kubectl exec -i -n kube-system calicoctl -- /usr/bin/calicoctl --allow-version-mismatch get ippools -o wide
