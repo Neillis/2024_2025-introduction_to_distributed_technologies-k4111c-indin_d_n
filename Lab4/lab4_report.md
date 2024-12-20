@@ -22,13 +22,13 @@ Date of finished: 20.12.2024
 
 ## Ход работы:
 ### 1 Установка плагина calico и включение 2-х нод
-Для создания кластера с данной конфигурацией была использована следующая команда
+Для созднаия кластера с необходимой конфигурацией была использована команда:
 ```bash
 minikube start --cni=calico --nodes 2 -p multinode-demo
 ```
 ![Рисунок 1](./Images/Claster_creating.png)
 
-Проверка созданных нод и работы плагина calico
+Проверка узлов и работы плагина Calico:
 ```bash
 kubectl get nodes
 ```
@@ -49,12 +49,12 @@ kubectl label nodes multinode-demo-m02 zone=west
 ---
 
 ### 2 Назначение IP адресов нодам
-Для корректной работы плагино необходимо установить calicoctl в minikube
-это можно сделать командой
+Для работы плагина необходимо установить утилиту calicoctl в Minicube.
+это можно сделать с помощью команды:
 ```bash
 kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.1/manifests/calico.yaml
 ```
-Или же скачать yaml файл с репозитория и принять его командой
+Или предварительно скачать YAML-файл из [репозитория][https://github.com/projectcalico/calico/tree/v3.27.5/manifests]
 ```bash
 kubectl apply -f calicoctl.yaml
 ```
