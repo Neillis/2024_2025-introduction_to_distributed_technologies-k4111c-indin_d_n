@@ -59,5 +59,10 @@ kubectl delete ippools default-ipv4-ippool
 ```
 ![Рисунок 3](./Images/Ippool.png) 
 
+Дальше манифесть принимается командой
+```bash
+kubectl apply -f calicoctl.yaml
+```
+
 
 
